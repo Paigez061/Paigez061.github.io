@@ -16,6 +16,8 @@ body {
 nav {
     border-style: solid;
     border-color:rgb(81, 133, 84);
+    outline-style:solid;
+    outline-color:rgb(22, 22, 22);
     background: rgb(16, 16, 16);
    margin: 0 auto;
    margin-bottom: 20px;
@@ -44,6 +46,8 @@ a {
 main {
     border-style: solid;
     border-color: rgb(81, 133, 84);
+    outline-style:solid;
+    outline-color:rgb(30,30,30);
     background: rgb(22, 22, 22);
     display: flex;
 }
@@ -53,6 +57,8 @@ main {
 }
 .sidebar-img {
     width: 200px;
+    border-style: ridge;
+    border-color:rgb(81, 133, 84);
 }
 .content {
     flex: 1;
@@ -68,27 +74,10 @@ h2, h3 {
 .pale-green {
     color: rgb(205, 248, 206);
 }
-#main-border {
-    padding-left: 270px;
-    padding-right: 270px;
-    padding-bottom: 115px;
-    border-style:solid;
-    border-image: url(images/Screenshot\ 2023-01-23\ 1.58.11\ PM.png) 32% round;
-    border-image-repeat:repeat;
-    border-width: 20px;
-}
+
  /* portfolio styles */
-#portfolio-border {
-    padding-left: 270px;
-    padding-right: 270px;
-    padding-bottom: 115px;
-    border-style:solid;
-    border-image: url(images/Screenshot\ 2023-01-23\ 1.58.11\ PM.png) 32% round;
-    border-image-repeat:repeat;
-    border-width: 20px;
-}
 .content h1 {
-    color: black;
+    color: rgb(205, 248, 206);
 }
 #portfolio {
     list-style-type: none;
