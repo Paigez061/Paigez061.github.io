@@ -58,8 +58,6 @@ main {
     flex: 1;
     padding: 15px;
 }
-
-/* portfolio styles */
 #interests {
     border: 4px rgb(81, 133, 84) ridge;
     padding: 8px;
@@ -70,7 +68,7 @@ h2, h3 {
 .pale-green {
     color: rgb(205, 248, 206);
 }
-#border {
+#main-border {
     padding-left: 270px;
     padding-right: 270px;
     padding-bottom: 115px;
@@ -78,4 +76,34 @@ h2, h3 {
     border-image: url(images/Screenshot\ 2023-01-23\ 1.58.11\ PM.png) 32% round;
     border-image-repeat:repeat;
     border-width: 20px;
+}
+ /* portfolio styles */
+#portfolio-border {
+    padding-left: 270px;
+    padding-right: 270px;
+    padding-bottom: 115px;
+    border-style:solid;
+    border-image: url(images/Screenshot\ 2023-01-23\ 1.58.11\ PM.png) 32% round;
+    border-image-repeat:repeat;
+    border-width: 20px;
+}
+.content h1 {
+    color: black;
+}
+#portfolio {
+    list-style-type: none;
+    padding-left: 0;
+}
+#portfolio li {
+    background: #fff;
+    padding: 10px;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+#portfolio li:hover {
+    background: #eee;
+}
+#portfolio a {
+    text-decoration: none;
+    color: #454545;
 }
