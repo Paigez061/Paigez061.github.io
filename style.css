@@ -39,7 +39,7 @@ h1 {
 }
 a {
     text-decoration: none;
-    color: rgb(205, 248, 206);
+    color: rgb(170, 247, 161);
 }
 
 /* main container area beneath menu */
@@ -72,12 +72,12 @@ h2, h3 {
     margin: 0px;
 }
 .pale-green {
-    color: rgb(205, 248, 206);
+    color: rgb(170, 247, 161);
 }
 
  /* portfolio styles */
 .content h1 {
-    color: rgb(205, 248, 206);
+    color: rgb(170, 247, 161);
 }
 #portfolio {
     list-style-type: none;
