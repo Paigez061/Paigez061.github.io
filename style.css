@@ -90,7 +90,7 @@ h2, h3 {
     margin-bottom: 10px;
 }
 #portfolio li:hover {
-    background: #eee;
+    background: rgb(170, 247, 161);
 }
 #portfolio a {
     text-decoration: none;
