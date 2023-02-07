@@ -39,14 +39,18 @@
     // first set of platforms on the left
     createPlatform(300, 575, 0.5);
     createPlatform(0, 475, 0.4);
-    createPlatform(320, 375, 0.35);
-    createPlatform(30, 275, 0.35);
-    createPlatform(315, 175, 0.35);
+    createPlatform(300, 375, 0.5);
+    createPlatform(0, 275, 0.4);
+    createPlatform(315, 175, 0.4);
     createPlatform(0, 105, 0.4);
 
+    createPlatform(600, 275, 0.1, 15);
     // Middle platforms//
 
-    createPlatform(600, 275, 0.1, 15); 
+    createPlatform(700, 300, 0.635);
+    createPlatform(1100, 400, 0.4);
+    createPlatform(640, 500, 0.75);
+    createPlatform(1100, 575, 0.4);
 
     // ALL YOUR CODE GOES ABOVE HERE ///////////////////////////////////////
     ////////////////////////////////////////////////////////////////////////
