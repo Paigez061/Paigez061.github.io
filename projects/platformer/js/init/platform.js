@@ -44,13 +44,29 @@
     createPlatform(315, 175, 0.4);
     createPlatform(0, 105, 0.4);
 
-    createPlatform(600, 275, 0.1, 15);
-    // Middle platforms//
+    //Pillars//
+    createPlatform(600, 260, 0.1, 15);
+    createPlatform(900, 275, 0.1, 8.96);
 
-    createPlatform(700, 300, 0.635);
-    createPlatform(1100, 400, 0.4);
-    createPlatform(640, 500, 0.75);
-    createPlatform(1100, 575, 0.4);
+    //Inside box//
+
+    //inside pillars//
+    createPlatform(700, 275, 2.1);
+    createPlatform(640, 400, 0.5);
+    createPlatform(700, 530, 0.5);
+    //outside pillars//
+
+    createPlatform(1240, 575, 0.4);
+    createPlatform(940, 475, 0.4);
+    createPlatform(1240, 400, 0.7);
+    
+    //Staircase//
+    createPlatform(950, 210, 0.5, 2.05);
+    createPlatform(1150, 150, 0.5, 3.94);
+    createPlatform(1350, 90, 0.5, 5.80);
+
+    //Above Staircase//
+    createPlatform(800, 90, 0.4)
 
     // ALL YOUR CODE GOES ABOVE HERE ///////////////////////////////////////
     ////////////////////////////////////////////////////////////////////////
