@@ -66,7 +66,7 @@
     createPlatform(1350, 90, 0.5, 5.80);
 
     //Above Staircase//
-    createPlatform(800, 90, 0.4)
+    createPlatform(792, 90, 0.4)
 
     // ALL YOUR CODE GOES ABOVE HERE ///////////////////////////////////////
     ////////////////////////////////////////////////////////////////////////
