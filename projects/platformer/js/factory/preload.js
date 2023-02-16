@@ -10,7 +10,7 @@
         game.load.image('projectile', './asset/GoldOrbProjectile.png');
         game.load.image('platform', './asset/platform (1).png');
         game.load.image('db', './asset/collectable/database.png');
-        game.load.image('steve', './asset/collectable/CloverCoin.png');
+        game.load.image('coin', './asset/collectable/CloverCoin.png');
         game.load.image('grace', './asset/collectable/grace-head.png');
         game.load.image('kennedi', './asset/collectable/kennedi-head.png');
         game.load.image('max', './asset/collectable/max-head.png');

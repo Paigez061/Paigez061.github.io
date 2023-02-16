@@ -7,7 +7,7 @@
   let type = {
     db: { assetKey: "db", points: 10 },
     max: { assetKey: "max", points: 20 },
-    steve: { assetKey: "steve", points: 30 },
+    coin: { assetKey: "coin", points: 30 },
     grace: { assetKey: "grace", points: 40 },
     kennedi: { assetKey: "kennedi", points: 50 },
   };
@@ -39,10 +39,10 @@
     // ALL YOUR CODE GOES BELOW HERE ///////////////////////////////////////
 
     // example:
-    createCollectable(type.steve, 0, 0);
-    createCollectable(type.steve, 833, 15);
-    createCollectable(type.steve, 1445, 325);
-    createCollectable(type.steve, 1445, 15);
+    createCollectable(type.coin, 0, 0);
+    createCollectable(type.coin, 833, 15);
+    createCollectable(type.coin, 1445, 325);
+    createCollectable(type.coin, 1445, 15);
 
     // ALL YOUR CODE GOES ABOVE HERE ///////////////////////////////////////
     ////////////////////////////////////////////////////////////////////////
