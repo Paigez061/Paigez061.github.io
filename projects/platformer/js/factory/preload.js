@@ -8,7 +8,7 @@
     opspark.preload = function (game) {
         game.load.image('cannon', './asset/cannonGreen.png');
         game.load.image('projectile', './asset/GoldOrbProjectile.png');
-        game.load.image('platform', './asset/platform (1).png');
+        game.load.image('platform', './asset/platform.png');
         game.load.image('db', './asset/collectable/database.png');
         game.load.image('coin', './asset/collectable/CloverCoin.png');
         game.load.image('grace', './asset/collectable/grace-head.png');
