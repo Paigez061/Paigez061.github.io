@@ -8,7 +8,7 @@
     db: { assetKey: "db", points: 10 },
     bigCoin: { assetKey: "bigCoin", points: 20 },
     coin: { assetKey: "coin", points: 30 },
-    grace: { assetKey: "grace", points: 40 },
+    cloverPoint: { assetKey: "cloverPoint", points: 40 },
     kennedi: { assetKey: "kennedi", points: 50 },
   };
 
@@ -38,11 +38,14 @@
     ////////////////////////////////////////////////////////////////////////
     // ALL YOUR CODE GOES BELOW HERE ///////////////////////////////////////
 
-    // example:
+    // Gold Coins //
     createCollectable(type.bigCoin, 0, 0);
     createCollectable(type.coin, 833, 15);
     createCollectable(type.coin, 1445, 325);
     createCollectable(type.coin, 1445, 15);
+
+    // Points //
+    createCollectable(type.cloverPoint, 600, 50);
 
     // ALL YOUR CODE GOES ABOVE HERE ///////////////////////////////////////
     ////////////////////////////////////////////////////////////////////////
