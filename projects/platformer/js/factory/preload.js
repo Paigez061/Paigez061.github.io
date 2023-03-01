@@ -14,6 +14,6 @@
         game.load.image('cloverPoint', './asset/collectable/cloverPoint.png');
         game.load.image('kennedi', './asset/collectable/kennedi-head.png');
         game.load.image('bigCoin', './asset/collectable/BigCloverCoin.png');
-        game.load.atlas('halle', './asset/halle/phaser-json-array/halle (13).png', './asset/halle/phaser-json-array/halle.json');
+        game.load.atlas('halle', './asset/halle/phaser-json-array/halle.png', './asset/halle/phaser-json-array/halle.json');
     };
 })(window);
