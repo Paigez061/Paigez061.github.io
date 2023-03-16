@@ -1,16 +1,28 @@
 <!DOCTYPE html>
 <html>
 <head>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="link href=https://fonts.googleapis.com/css2?family=Kalam:wght@300;400&display=swap" rel="stylesheet">
 	<meta charset="utf-8">
 	<title>Bouncing Box</title>
 	<script src="jquery.min.js"></script>
-	<style>
+	<style> 
 		.box {
 			width: 70px;
 			height: 70px;
-			background-color: teal;
+			background-color: rgba(11, 209, 113, 0.473);
+			border-style: solid;
+			border-width: 2px;
+			border-color: rgb(255, 255, 255);
+			border-radius: 10px;
+			outline-style: solid;
+			outline-width: 5px;
+			outline-color: rgb(2, 157, 27);
 			font-size: 300%;
 			text-align: center;
+			color:rgb(255, 255, 255);
+			font-family: 'Kalam', cursive;
 			user-select: none;
 			display: block;
 			position: absolute;
@@ -19,6 +31,9 @@
 		}
 		.board{
 			height: 100vh;
+			background-image: url(images/backgrounds/ogBackground.jpg);
+			background-size: cover;
+			background-repeat: no-repeat;
 		}
 	</style>
 	<!-- 	<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script> -->
@@ -27,7 +42,6 @@
 <body class="board">
 	<!-- HTML for the box -->
 	<div class="box">?</div>
-
 	<script>
 		
 		(function(){
@@ -42,7 +56,6 @@
 			var board = jQuery('.board');	// reference to the HTML .board element
 			var boardWidth = board.width();	// the maximum X-Coordinate of the screen
 			var boardHeight= jQuery(window).height();
-			 
 
 			// Every 50 milliseconds, call the update Function (see below)
 			setInterval(update, 50);
@@ -61,19 +74,62 @@
 				box.text(newText);
 			}
 
+			function changeBackground(newBG) {
+					board.css('background-image', newBG)
+			}
+			
+			function changeBoxColor(outline, backgroundColor) {
+				box.css('outline-color', outline);
+				box.css('background-color', backgroundColor);
+			}
+
+			function Background(BGNum) {
+				if (BGNum === 1) {
+					changeBackground('url(images/backgrounds/GrayBlackGreenBG.jpg)');
+					changeBoxColor('rgb(254, 254, 97)', 'rgba(0, 119, 87, 0.473)');
+				}else if (BGNum === 2) {
+					changeBackground('url(images/backgrounds/BlackWhiteBlueBG.jpg)');
+					changeBoxColor('rgb(4, 149, 64)', 'rgba(3, 175, 209, 0.473)');
+				}else if (BGNum === 3) { 
+					changeBackground('url(images/backgrounds/BlueWhiteGoldBG.jpg)');
+					changeBoxColor('rgb(209, 156, 20)', 'rgba(87, 172, 215, 0.473)');
+				}else if (BGNum === 4) { 
+					changeBackground('url(images/backgrounds/ColorfulBG.jpg)');
+					changeBoxColor('rgb(0, 0, 0)', 'rgba(0, 0, 0, 0.473)');
+				}else if (BGNum === 5) { 
+					changeBackground('url(images/backgrounds/WhitePinkBG.jpg)');
+					changeBoxColor('rgb(155, 22, 196)', 'rgba(195, 23, 211, 0.473)');
+				}else if (BGNum === 6) { 
+					changeBackground('url(images/backgrounds/OrangeBlackBG.jpg)');
+					changeBoxColor('rgb(255, 25, 25)', 'rgba(211, 51, 23, 0.473)');
+				}	
+			}
+
+			function Speed(spIn) {
+				if (speedX > 0) {
+						speedX += spIn;
+					}else if (speedX < 0) {
+						speedX -= spIn;
+					}
+					if (speedY > 0) {
+						speedY += spIn;
+					}else if (speedY < 0) {
+						speedY -= spIn;
+					}
+			}
+		    
+
 			//////////////////////////////////////////////////////////////////
 			/////////////////// YOUR CODE BELOW HERE /////////////////////////
 			//////////////////////////////////////////////////////////////////
 			
 			// TODO 2 - Variable declarations 
 			
-			
 			var positionX = 0;
 			var points = 0;
 			var speedX = 10;
 			var positionY = 0;
 			var speedY = 10;
-			
 			
 			/* 
 			This Function will be called 20 times/second. Each time it is called,
@@ -109,21 +165,15 @@
 			function handleBoxClick() {
 				points = points + 1;
 				changeBoxText(points);
-				positionX = 0;
-				PositionY = 0;
-				
-				if (speedX === speedX) {
-					speedX = speedX + 3;
-				}else if (speedX = -speedX) {
-					speedX = speedX - 3;
+				if (points % 3 === 0) {
+					var backgroundNum = Math.floor(Math.random()*7);
+					Background(backgroundNum);
+					Speed(3);
 				}
-				if (speedY === speedY) {
-					speedY = speedY + 3;
-				}else if (speedY = -speedY) {
-					speedY = speedY - 3;
-				}
-            }
-        })();
+				positionX = Math.floor(Math.random()*boardWidth);
+				PositionY = Math.floor(Math.random()*boardHeight);
+        	}
+    	})();
 	</script>
 </body>
 </html>
