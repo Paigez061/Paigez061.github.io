@@ -7,6 +7,11 @@
 	<meta charset="utf-8">
 	<title>Bouncing Box</title>
 	<script src="jquery.min.js"></script>
+	<script>
+		function goBack() {
+		  window.history.back()
+		}
+	</script>
 	<style> 
 		.box {
 			width: 70px;
@@ -35,11 +40,22 @@
 			background-size: cover;
 			background-repeat: no-repeat;
 		}
+		#backButton {
+			background-color: rgb(16, 16, 16);
+			border-radius: 5px;
+			border-style: solid;
+			border-color:rgb(81, 133, 84);
+			border-width: 5px;
+			color:rgb(170, 247, 161); 
+			outline-style: solid;
+			outline-color: rgb(255, 255, 255);
+		}
 	</style>
 	<!-- 	<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script> -->
 
 </head>
 <body class="board">
+	<input type="button" id="backButton" value="Back" onclick="goBack()">
 	<!-- HTML for the box -->
 	<div class="box">?</div>
 	<script>
@@ -58,10 +74,11 @@
 			var boardHeight= jQuery(window).height();
 
 			// Every 50 milliseconds, call the update Function (see below)
-			setInterval(update, 50);
+			var interval = setInterval(update, 50);
 			
 			// Every time the box is clicked, call the handleBoxClick Function (see below)
 			box.on('click', handleBoxClick);
+			board.on('click', handleBoardClick);
 
 			// moves the Box to a new position on the screen along the X-Axis
 			function moveBoxTo(newPositionX, newPositionY) {
@@ -75,7 +92,7 @@
 			}
 
 			function changeBackground(newBG) {
-					board.css('background-image', newBG)
+				board.css('background-image', newBG);
 			}
 			
 			function changeBoxColor(outline, backgroundColor) {
@@ -107,29 +124,37 @@
 
 			function Speed(spIn) {
 				if (speedX > 0) {
-						speedX += spIn;
-					}else if (speedX < 0) {
-						speedX -= spIn;
-					}
-					if (speedY > 0) {
-						speedY += spIn;
-					}else if (speedY < 0) {
-						speedY -= spIn;
-					}
-			}
-		    
+					speedX += spIn;
+				}else if (speedX < 0) {
+					speedX -= spIn;
+				}
+				if (speedY > 0) {
+					speedY += spIn;
+				}else if (speedY < 0) {
+					speedY -= spIn;
+				}
 
+			}
+			
+			function handleBoardClick() {
+				clicks = clicks + 1;
+				if (clicks - points >= 3) {
+					clearInterval(interval);
+					window.confirm("You got to number " + points + "!");
+				}
+			}
 			//////////////////////////////////////////////////////////////////
 			/////////////////// YOUR CODE BELOW HERE /////////////////////////
 			//////////////////////////////////////////////////////////////////
 			
 			// TODO 2 - Variable declarations 
 			
+			var clicks = 0;
 			var positionX = 0;
 			var points = 0;
-			var speedX = 10;
+			var speedX = 16;
 			var positionY = 0;
-			var speedY = 10;
+			var speedY = 9;
 			
 			/* 
 			This Function will be called 20 times/second. Each time it is called,
@@ -168,7 +193,7 @@
 				if (points % 3 === 0) {
 					var backgroundNum = Math.floor(Math.random()*7);
 					Background(backgroundNum);
-					Speed(3);
+					Speed(2);
 				}
 				positionX = Math.floor(Math.random()*boardWidth);
 				PositionY = Math.floor(Math.random()*boardHeight);

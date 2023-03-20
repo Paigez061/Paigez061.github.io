@@ -19,8 +19,8 @@ nav {
     outline-style:solid;
     outline-color:rgb(22, 22, 22);
     background: rgb(16, 16, 16);
-   margin: 0 auto;
-   margin-bottom: 20px;
+    margin: 0 auto;
+    margin-bottom: 20px;
     display: flex;
     padding: 10px;
 }
