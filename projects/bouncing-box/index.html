@@ -179,7 +179,7 @@
 			
 			function handleBoardClick() {
 				clicks = clicks + 1;
-				if (clicks - points >= 3) {
+				if (clicks - points >= 30) {
 					clearInterval(interval);
 					box.css("display", "none");
 					endContainer.css("display", "flex");
