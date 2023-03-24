@@ -7,11 +7,6 @@
 	<meta charset="utf-8">
 	<title>Bouncing Box</title>
 	<script src="jquery.min.js"></script>
-	<script>
-		function goBack() {
-		  window.history.back()
-		}
-	</script>
 	<style> 
 		.box {
 			width: 70px;
@@ -40,24 +35,69 @@
 			background-size: cover;
 			background-repeat: no-repeat;
 		}
-		#backButton {
-			background-color: rgb(16, 16, 16);
-			border-radius: 5px;
+		.endContainer {
+			display: none;
+			align-items: center;
+			justify-content: center;
+			width: 100%;
+			height: 100%;
+
+		}
+		.endGame {
+			height: 300px;
+			width: 500px;
+			background-color: rgb(22, 22, 22);
 			border-style: solid;
-			border-color:rgb(81, 133, 84);
-			border-width: 5px;
-			color:rgb(170, 247, 161); 
+			border-color: rgb(81, 133, 84);
+			border-radius: 10%;
+			border-width: 10px;
 			outline-style: solid;
-			outline-color: rgb(255, 255, 255);
+			outline-color:rgb(16, 16, 16);
+			outline-width: 5px;
+			color: rgb(170, 247, 161);
+			text-align: center;
+		}
+		.options {
+			border-style: solid;
+			border-color: rgba(255, 255, 255, 0);
+			background-color: rgb(30,30,30);
+			border-top-width: 10px;
+			border-top-color: rgb(81, 133, 84);
+			border-bottom-left-radius: 12%;
+			border-bottom-right-radius: 12%;
+			padding: 7%;
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+			flex-direction: column;
+		}
+		.linkButtons {
+			padding: 10px;
+			text-decoration: none;
+			border-style: solid;
+			border-radius: 10%;
+			border-width: 5px;
+			border-color: rgb(81, 133, 84);
+			background-color: rgb(22, 22, 22);
+			color:rgb(170, 247, 161);
 		}
 	</style>
 	<!-- 	<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script> -->
 
 </head>
 <body class="board">
-	<input type="button" id="backButton" value="Back" onclick="goBack()">
 	<!-- HTML for the box -->
 	<div class="box">?</div>
+	<div class="endContainer">
+		<div class="endGame">
+			<h1>YOU LOST!!!</h1>
+			<h3 id="pointsWon"> </h3>
+			<div class="options">
+				<a href="https://paigez061.github.io/portfolio.html" class="linkButtons">Back to Portfolio</a>
+				<a href="index.html" class="linkButtons">Restart</a>
+			</div>
+		</div>
+	</div>
 	<script>
 		
 		(function(){
@@ -71,7 +111,8 @@
 			var box = jQuery('.box');	// reference to the HTML .box element
 			var board = jQuery('.board');	// reference to the HTML .board element
 			var boardWidth = board.width();	// the maximum X-Coordinate of the screen
-			var boardHeight= jQuery(window).height();
+			var boardHeight = jQuery(window).height();
+			var endContainer = jQuery('.endContainer');
 
 			// Every 50 milliseconds, call the update Function (see below)
 			var interval = setInterval(update, 50);
@@ -140,9 +181,13 @@
 				clicks = clicks + 1;
 				if (clicks - points >= 3) {
 					clearInterval(interval);
-					window.confirm("You got to number " + points + "!");
+					box.css("display", "none");
+					endContainer.css("display", "flex");
+					document.getElementById("pointsWon").innerHTML = "You got to " + points + " clicks!";
+
 				}
 			}
+
 			//////////////////////////////////////////////////////////////////
 			/////////////////// YOUR CODE BELOW HERE /////////////////////////
 			//////////////////////////////////////////////////////////////////
