@@ -73,22 +73,26 @@ var init = function (window) {
         Function. If that circle drifts off the screen, this Function should move
         it to the opposite side of the screen.
         */
+        
         game.checkCirclePosition = function(circle) {
-            
+            var rightEdge = circle.x + circle.radius;
+            var leftEdge = circle.x - circle.radius;
+            var topEdge = circle.y - circle.radius;
+            var bottomEdge = circle.y + circle.radius;
             // if the circle has gone past the RIGHT side of the screen then place it on the LEFT
-            if ( circle.x > canvas.width) {
-                circle.x = 0;
+            if (leftEdge > canvas.width) {
+                circle.x = 0 - circle.radius;
             }
             
             // TODO 6 : YOUR CODE STARTS HERE //////////////////////
-            if (circle.x < 0) {
-                circle.x = canvas.width;
+            if (rightEdge < 0) {
+                circle.x = canvas.width + circle.radius;
             }
-            if ( circle.y > canvas.height) {
-                circle.y = 0;
+            if (topEdge > canvas.height) {
+                circle.y = 0 - circle.radius;
             }
-            if (circle.y < 0) {
-                circle.y = canvas.height;
+            if (bottomEdge < 0) {
+                circle.y = canvas.height + circle.radius;
             }
 
             // YOUR TODO 6 CODE ENDS HERE //////////////////////////
